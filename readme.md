@@ -159,7 +159,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 For any questions or suggestions, please contact:
 
-- **Project Maintainer**: [Your Name](mailto:your.email@example.com)
+- **Project Maintainer**: Aditya Aerpule & Parinay Raya
 - **Issue Tracker**: [GitHub Issues](https://github.com/yourusername/electricity-billing-system/issues)
 
 ---
