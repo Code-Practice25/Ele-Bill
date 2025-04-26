@@ -1,0 +1,312 @@
+/* General resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  height: 100vh;
+  background-image: url("https://res.cloudinary.com/harshdubey1198/image/upload/v1731250799/electricity_background_fbcyx1.png");
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style for the main container */
+.main-container {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  height: 600px;
+  margin-top: 50px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+}
+
+/* Form styles */
+/* Styling for Login Form */
+#login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: auto;  /* Keep auto height for login form */
+  margin-top: 20px;
+}
+
+/* Styling for Register Form */
+#register-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 250px;  /* Reduce height further (adjust as needed) */
+  margin-top: 50px;
+  overflow-y: auto;  /* Enable vertical scrolling */
+  padding-right: 10px; 
+}
+
+/* Switch container */
+.switch-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+}
+
+/* Switch styles */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  left: 4px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #4CAF50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(25px);
+}
+
+/* Switch labels */
+.switch-labels {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.switch-labels span {
+  transition: opacity 0.3s, color 0.3s, font-weight 0.3s;
+  margin-right: 7px;
+}
+
+.switch-labels .login-label,
+.switch-labels .register-label {
+  color: #ccc;
+  opacity: 0.7;
+}
+
+input:checked ~ .switch-labels .login-label,
+input:not(:checked) ~ .switch-labels .register-label {
+  color: #333;
+  font-weight: bold;
+  opacity: 1;
+}
+
+input:checked ~ .switch-labels .register-label,
+input:not(:checked) ~ .switch-labels .login-label {
+  opacity: 0.7;
+}
+
+/* Input fields */
+.input-group {
+  position: relative;
+}
+
+.form-control {
+  padding-right: 30px;
+}
+
+#togglePassword,
+#toggleRegisterPassword {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+#togglePassword i,
+#toggleRegisterPassword i {
+  font-size: 1.2rem;
+  color: #aaa;
+  transition: color 0.3s ease;
+}
+
+#togglePassword:hover i,
+#toggleRegisterPassword:hover i {
+  color: #333;
+}
+
+/* Centering the logo */
+#logo_image {
+  display: block;
+  margin: 0 auto 20px;
+  max-width: 100px;
+}
+
+/* Updated Social buttons */
+.social-buttons {
+  display: flex;
+  justify-content: center; /* Center align icons horizontally */
+  gap: 10px; /* Add spacing between icons */
+}
+
+.social-buttons .btn {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: #f1f1f1;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+  text-decoration: none;
+}
+
+.social-buttons .btn:hover {
+  background-color: #ac9cd2;
+}
+
+.social-buttons .fab {
+  font-size: 1.5rem;
+  color: inherit;
+}
+
+/* Form elements */
+.form-outline {
+  margin-bottom: 16px;
+}
+
+.form-outline .form-label {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.form-outline .form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-outline .form-control:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+/* Checkboxes and links */
+.form-check-label {
+  margin-left: 8px;
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form-check input {
+  margin-right: 8px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Submit button */
+.btn-block {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-block:hover {
+  background-color: #0056b3;
+}
+
+/* Tabs */
+.tab-content {
+  margin-top: 20px;
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.show.active {
+  display: block;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-3 {
+  margin-bottom: 1rem;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+.mt-2 {
+  margin-top: 1rem;
+}

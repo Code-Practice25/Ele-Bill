@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ele-Bill</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./Css/dashboard_style.css">
+    <style>
+        .card-body {
+            background-color: rgba(255, 255, 255, 0.7);
+            /* Translucent white background */
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            /* Rounded corners */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            /* Subtle shadow for the card */
+            margin-right: 10%;
+            margin-left: 10%;
+        }
+
+        .card-body h5.card-title {
+            font-size: 1.25em;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .card-body .row {
+            margin-bottom: 10px;
+        }
+
+        .card-body .row .col-sm-3 {
+            font-weight: 500;
+            color: #6c757d;
+            /* Subtle text color */
+        }
+
+        .card-body .row .col-sm-9 {
+            font-size: 1em;
+        }
+
+        .card-body .btn {
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            transition: background-color 0.3s;
+        }
+
+        .card-body .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .card-body .switch input {
+            margin-right: 10px;
+        }
+
+        .card-body .switch span.slider {
+            border-radius: 25px;
+            width: 34px;
+            height: 20px;
+            background-color: #ccc;
+        }
+
+        .card-body .switch input:checked+.slider {
+            background-color: #007bff;
+        }
+
+        .card-body .switch .slider:before {
+            border-radius: 50%;
+            content: "";
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 14px;
+            height: 14px;
+            background-color: white;
+            transition: 0.4s;
+        }
+
+        .card-body .switch input:checked+.slider:before {
+            transform: translateX(14px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <img id="logo_image"
+            src="https://res.cloudinary.com/harshdubey1198/image/upload/v1731250797/Ele_bill_logo_o6rt0y.png"
+            alt="Ele-Bill">
+        <div class="flex-column align-items-center">
+            <a class="w-75" href="home.html">
+                <button class="w-100 rounded my-2 mt-5">
+                    <i class="fas fa-home"></i> <span>Home</span>
+                </button>
+            </a>
+            <a class="w-75" href="profile.html">
+                <button class="w-100 rounded my-2">
+                    <i class="fas fa-user"></i> <span>Profile</span>
+                </button>
+            </a>
+            <a class="w-75" href="payments.html">
+                <button class="w-100 rounded my-2">
+                    <i class="fas fa-credit-card"></i> <span>Payments</span>
+                </button>
+            </a>
+            <a class="w-75" href="bill.html">
+                <button class="w-100 rounded my-2">
+                    <i class="fas fa-file-invoice"></i> <span>Bills</span>
+                </button>
+            </a>
+            <a class="w-75" href="setting.html">
+                <button class="w-100 rounded my-2">
+                    <i class="fas fa-cogs"></i> <span>Settings</span>
+                </button>
+            </a>
+            <a class="w-75" href="index.html">
+                <button class="w-100 rounded my-2">
+                    <i class="fas fa-sign-out-alt"></i> <span>Logout</span>
+                </button>
+            </a>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="header">
+            <h1>Settings</h1>
+        </div>
+
+        <!-- Password and Security -->
+        <div class="card-body">
+            <h5 class="card-title">Password and Security</h5>
+
+            <div class="row">
+                <div class="col-sm-3 text-muted">Change Password</div>
+                <div class="col-sm-9">
+                    <a href="forgot-password.html">
+                        <button class="btn btn-warning" id="change-password-btn">Change Password</button>
+                    </a>
+                </div>
+            </div>
+            <hr>
+        </div>
+
+        <!-- Notification Settings -->
+        <div class="card-body">
+            <h5 class="card-title">Notification Settings</h5>
+
+            <div class="row">
+                <div class="col-sm-3 text-muted">Bill Reminder</div>
+                <div class="col-sm-9">
+                    <label class="switch">
+                        <input type="checkbox" id="bill-reminder" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <hr>
+
+            <div class="row">
+                <div class="col-sm-3 text-muted">Usage Alerts</div>
+                <div class="col-sm-9">
+                    <label class="switch">
+                        <input type="checkbox" id="usage-alerts" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <hr>
+
+            <div class="row">
+                <div class="col-sm-3 text-muted">Promotional Notifications</div>
+                <div class="col-sm-9">
+                    <label class="switch">
+                        <input type="checkbox" id="promotional-notifications" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <button class="btn btn-primary mt-3" id="save-notifications-btn">Save</button>
+        </div>
+
+        <!-- Help and Support -->
+        <div class="card-body">
+            <h5 class="card-title">Help and Support</h5>
+
+            <div class="row">
+                <div class="col-sm-3 text-muted">Customer Support</div>
+                <div class="col-sm-9">
+                    <button class="btn btn-danger" id="contact-support-btn" onclick="window.location.href='contactUs.html';">Contact Support</button>
+                </div>
+            </div>
+            <hr>
+
+            <div class="row">
+                <div class="col-sm-3 text-muted">FAQ</div>
+                <div class="col-sm-9">
+                    <a href="faq.html" class="btn btn-link" id="faq-btn">Go to FAQ</a>
+                </div>
+            </div>
+            <hr>
+        </div>
+
+    </div>
+
+    <script src="./Scripts/dashboard_script.js"></script>
+
+    <script>
+        function updateFileName() {
+            const input = document.getElementById('profile-picture-input');
+            const fileNameDisplay = document.getElementById('profile-picture-text');
+
+            if (input.files && input.files.length > 0) {
+                fileNameDisplay.value = input.files[0].name;
+            }
+        }
+
+        function editProfile() {
+            // Show the file input and make text field clickable
+            document.getElementById('profile-picture-input').style.display = 'block';
+            document.getElementById('profile-picture-text').disabled = false;
+            document.getElementById('edit-profile-btn').style.display = 'none';
+            document.getElementById('save-profile-btn').style.display = 'block';
+        }
+
+        function saveProfile() {
+            // Hide the file input and disable the text field
+            const input = document.getElementById('profile-picture-input');
+            document.getElementById('profile-picture-input').style.display = 'none';
+            document.getElementById('profile-picture-text').disabled = true;
+            document.getElementById('edit-profile-btn').style.display = 'block';
+            document.getElementById('save-profile-btn').style.display = 'none';
+
+            // Logic to upload the new profile picture to the server can be added here
+        }
+    </script>
+
+</body>
+
+</html>
