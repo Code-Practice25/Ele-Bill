@@ -106,7 +106,7 @@ document.getElementById('login').addEventListener('click', function (event) {
 
   const loginData = { email: email, password: password };
 
-  sendApiRequest('http://localhost:5000/api/auth/login', 'POST', loginData)
+  sendApiRequest('https://ele-bill.onrender.com/api/auth/login', 'POST', loginData)
     .then(data => {
       if (data.message === 'Login successful') {
         localStorage.setItem('authuser', JSON.stringify(data));
@@ -166,7 +166,7 @@ document.getElementById("register").addEventListener("click", function (event) {
   if (errorMessage) {
     alert(errorMessage);
   } else {
-    sendApiRequest("http://localhost:5000/api/auth/signup", "POST", registerData)
+    sendApiRequest("https://ele-bill.onrender.com/api/auth/signup", "POST", registerData)
       .then(data => {
         alert("Registration successful!");
         localStorage.setItem('authuser', JSON.stringify(data));
@@ -218,7 +218,7 @@ function toggleEdit() {
 // Save the profile data
 function saveProfile() {
   const userId = JSON.parse(localStorage.getItem('authuser')).user._id;
-  const apiUrl = `http://localhost:5000/api/auth/user/${userId}`;
+  const apiUrl = `https://ele-bill.onrender.com/api/auth/user/${userId}`;
 
   // Gather updated data
   const updatedData = {
