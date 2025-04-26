@@ -9,7 +9,7 @@
     "dev": "nodemon app.js",
     "build": "npm install"
   },
-  "author": "Harsh Dubey",
+  "author": "Aditya Aerpule, Parinay Raya",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
